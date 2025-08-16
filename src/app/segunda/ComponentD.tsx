@@ -1,0 +1,16 @@
+import React from 'react'
+
+interface Props {
+  test?: string; // Opcional pois é o último componente
+}
+
+export default function ComponentD({ test }: Props) {
+  console.log("Component D rodou no:", typeof window === "undefined" ? "Server" : "Client");
+  return (
+    <div className='border border-yellow-500 p-4 m-2'>
+      <h5>ComponentD (Server)</h5>
+      {test && <p>Received test: {test}</p>}
+      <p>This is a server component</p>
+    </div>
+  )
+}
