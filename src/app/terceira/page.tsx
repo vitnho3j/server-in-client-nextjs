@@ -10,8 +10,13 @@ export default function page() {
   console.log("Component Root rodou no:", typeof window === "undefined" ? "Server" : "Client");
   let testFromServer = "test from server";
   return (
-    <DProvider componentE={<ComponentD test={testFromServer}/>}>
-        <ComponentA/>
-    </DProvider>
+    <div className='mt-10'>
+      <p className="text-sm">This is the Root component - It use context to be able to use a Server Component inside of a Client Component in a complex hierarchy <span className="font-bold">(SERVER - SIDE)</span></p>
+      <div className='border border-red-500'>
+        <DProvider componentE={<ComponentD test={testFromServer}/>}>
+            <ComponentA/>
+        </DProvider>
+      </div>
+    </div>
 )
 }

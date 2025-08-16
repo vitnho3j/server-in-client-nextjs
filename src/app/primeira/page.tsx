@@ -10,6 +10,11 @@ import ComponentRandom from './ComponentRandom'
 export default function page() {
   console.log("Component Root rodou no:", typeof window === "undefined" ? "Server" : "Client");
   return (
-    <ComponentWrapper FooterComponent={<ComponentFooter/>} RandomDiv={<ComponentRandom/>}/> 
+    <div className='mt-10'>
+      <p className="text-sm">This is the Root component - It use props to be able to use a Server Component inside of a Client Component in a complex hierarchy <span className="font-bold">(SERVER - SIDE)</span></p>
+      <div className='border border-red-500 p-4'>
+        <ComponentWrapper FooterComponent={<ComponentFooter/>} RandomDiv={<ComponentRandom/>}/> 
+      </div>
+    </div>
   )
 }

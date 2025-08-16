@@ -10,14 +10,17 @@ import ComponentD from './ComponentD'
 export default function page() {
     console.log("Component Root rodou no:", typeof window === "undefined" ? "Server" : "Client");
   return (
-    <div className="mt-10 border border-red-500">
-        <ComponentA>
-            <ComponentB>
-                <ComponentC>
-                    <ComponentD />
-                </ComponentC>
-            </ComponentB>
-        </ComponentA> 
+    <div className='mt-10'>
+        <p className="text-sm">This is the Root component - It use children to be able to use a Server Component inside of a Client Component in a complex hierarchy <span className="font-bold">(SERVER - SIDE)</span></p>
+        <div className="border border-red-500">
+            <ComponentA>
+                <ComponentB>
+                    <ComponentC>
+                        <ComponentD />
+                    </ComponentC>
+                </ComponentB>
+            </ComponentA> 
+        </div>
     </div>
   )
 }

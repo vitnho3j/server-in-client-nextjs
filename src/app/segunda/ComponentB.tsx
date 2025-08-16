@@ -11,10 +11,14 @@ export default function ComponentB({ children, test }: { children: React.ReactEl
   const [constFromB, setConstFromB] = React.useState("constFromB");
   console.log("Component B rodou no:", typeof window === "undefined" ? "Server" : "Client");
   return (
+    <>
+    <p className="text-sm">This is the component B <span className="font-bold">(CLIENT - SIDE)</span></p>  
     <div className='border border-blue-500 p-4 m-2'>
-      <h3>ComponentB (Client)</h3>
-      <p>Received test: {test}</p>
+      <p>Received test from component A: <span className='font-bold'>{test}</span></p>
+      <div className='mt-10'>
       {React.cloneElement(children, { test, constFromB })}
+      </div>
     </div>
+    </>
   )
 }

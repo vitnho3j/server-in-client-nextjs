@@ -21,13 +21,19 @@ export default function ComponentWrapper({ FooterComponent, RandomDiv }: Compone
   console.log("Component Wrapper rodou no:", typeof window === "undefined" ? "Server" : "Client");
 
   return (
-  <>
-    <ComponentData request={request} test2={test2} />
-    <div>
-      <p>{test3}</p>
-      {RandomDiv}
-    </div>
-    {FooterComponent}
-  </>
+    <>
+      <p className="text-sm">This is the Wrapper component <span className="font-bold">(CLIENT - SIDE)</span></p>  
+      <div className="border border-white p-4 m-2">
+        <ComponentData request={request} test2={test2} />
+        <div>
+          <p className="text-sm">This is a paragraph inside of the Wrapper component to simulate a complex hierarchy. <span className="font-bold">(CLIENT - SIDE)</span></p>
+          <div className="border border-pink-500 p-4 m-2">
+            <p>{test3}</p>
+          </div>
+          {RandomDiv}
+        </div>
+        {FooterComponent}
+      </div>
+    </>
   );
 }
