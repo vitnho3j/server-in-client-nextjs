@@ -13,7 +13,7 @@ export default function page() {
     <div className='mt-10'>
       <p className="text-sm">This is the Root component - It use context to be able to use a Server Component inside of a Client Component in a complex hierarchy <span className="font-bold">(SERVER - SIDE)</span></p>
       <div className='border border-red-500'>
-        <DProvider componentE={<ComponentD test={testFromServer}/>}>
+        <DProvider componentD={<ComponentD test={testFromServer}/>}>
             <ComponentA/>
         </DProvider>
       </div>
